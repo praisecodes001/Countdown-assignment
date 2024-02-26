@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Countdown Timer Project</title>
+</head>
+<body>
+    <script src="https://run.confettipage.com/here.js" data-confetticode="U2FsdGVkX18JBsg2IW7UTlKd3bSXGEBwAWrkxKGze0XqSNp2h/x8cm8oG9hGIDkVwxhbNZ7tlQQycl9hjoc9H85SRNdi5lu3okm31Hrswgq873jrb5CVQD1FHzKZq7UBgodOLmtzaNadc1898orAEIq2Eo5BQb/HUXWB/MtCbv/keEg1lxPti6Ok1wS6Oi6iR9zMfonqNpAuh4S2wpMFqggws+INdFpcdo/+i/m4aBn5Rw3XmcB1OjwV+PTBqlaix63gOpLVFYToKKmWDOF+FIRl2aqnhLk505uJozl/eWkjX+gAzS3X8qxKyKSyi+MVxAQgjSNiKqTIbTgyqyyPW5yKvHYu0MUWRj9KkegZZwQTWPPx6su6IhZ5ANKtaZTELpxeGQSrJD0/3SGFMfvSutuDvev4GDTR7nUQcxGIO/aZIxBaUc2AymgtlM/m4X/jdyaB7XjLGAo2Fc8Lfi2sq6Yk7V9QVm5ydVSTsQzHRhJsQ0un4FrHztLF120opN55XLS9W2ivXWHiFn/DYHr/gFn9vwOoGXYCii8IyrcFyrVDXOCm48VwFBOLk6g/ib77BEVqK4lJYpb0vRoECo2xDEI3tpddXA0eXIAw7InuWPgzGBb0kETFGuekIH84U8KAKGSteQojQhYPo7G8iDXthA=="></script>
+     <div class="header">
+        <nav>
+            <label class="logo">Spin <span>and</span> Win</label>
+            <ul class="nav-links">
+                <li><a href="">About</a></li>
+                <li><a href="">Deliveries</a></li>
+                <li><a href="">Contact</a></li>
+    
+            </ul>
+          </nav>
+     
+          <div class="container">
+               <h2>Congratulations , You've won the prize</h2>
+               <p>You have been approved as the winnner!!</p>
+               <div class="row">
+                <div class="col-1">
+                   <img src="image/phone1.jpg" alt="" class="image">
+                   <img src="image/phone2.jpg" alt="" class="image">
+                   <img src="image/phone4.jpg" alt="" class="image">
+                   <img src="image/image3.jpg" alt="" class="image">
+                </div>
+                <div class="col-2">
+                    <h2>I phone 15 won!!</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae illo corrupti nihil quo asperiores laborum laudantium neque doloribus animi voluptate sunt a, qui explicabo dolores dolorum! Non sequi culpa est illo assumenda sunt quaerat modi aliquam repellat tempora magnam quisquam, minus deleniti possimus praesentium vitae ratione sit dolore ea illum quae cum maxime qui consequuntur! Tempora?</p>
+                    <button class="btn"><a href="">Get your prize in 10 days</a></button>
+                  <div class="shape">
+                    <div class="cards" id="display"></div>
+                  </div>
+
+               </div>
+          </div>
+        </div>
+     </div>
+</body>
+
+<script>
+    var countDownDate = new Date(" March 8, 2024 00:00:00").getTime();
+    var x = setInterval(function(){
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+       
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("display").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+    clearInterval(x);
+    countDownDate = new Date("March 6,  2024 00:00:00").getTime(); 
+    // Change the date to the new countdown end date
+        }
+}, 1000);
+
+</script>
+<script>
+    var images = document.getElementsByTagName('img');
+    var index = 0;
+
+    function slideshow() {
+        images[index].style.display = 'none';
+        index = (index + 1) % images.length;
+        images[index].style.display = 'block';
+        setTimeout(slideshow, 2000);
+    }
+
+    slideshow();
+</script>
+</html>
